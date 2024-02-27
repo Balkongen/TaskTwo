@@ -138,6 +138,28 @@ class TimeCalculatorTest {
     }
 
     @Test
+    void getNumberOfWorkingMinutes_oneHundredAndNineteen_sameDay() {
+        Calendar from = Calendar.getInstance();
+        from.set(Calendar.DAY_OF_MONTH, 5);
+        from.set(Calendar.HOUR_OF_DAY,8);
+        from.set(Calendar.MINUTE,0);
+        from.set(Calendar.SECOND,0);
+        from.set(Calendar.MILLISECOND,0);
+
+        Calendar to = Calendar.getInstance();
+        to.set(Calendar.DAY_OF_MONTH, 5);
+        to.set(Calendar.HOUR_OF_DAY,9);
+        to.set(Calendar.MINUTE,59);
+        to.set(Calendar.SECOND,0);
+        to.set(Calendar.MILLISECOND,0);
+
+        TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
+        long diff = timeCalculator.getNumberOfWorkingMinutes();
+
+        assertEquals(119, diff);
+    }
+
+    @Test
     void getNumberOfWorkingMinutes_one_differentDays() {
         Calendar from = Calendar.getInstance();
         from.set(Calendar.DAY_OF_MONTH, 5);
