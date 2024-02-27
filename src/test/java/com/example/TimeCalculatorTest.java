@@ -1,7 +1,5 @@
 package com.example;
 
-import com.example.TimeCalculator;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Calendar;
@@ -111,7 +109,6 @@ class TimeCalculatorTest {
         to.set(Calendar.SECOND,0);
         to.set(Calendar.MILLISECOND,0);
 
-
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
         long diff = timeCalculator.getNumberOfWorkingMinutes();
 
@@ -134,7 +131,6 @@ class TimeCalculatorTest {
         to.set(Calendar.SECOND,0);
         to.set(Calendar.MILLISECOND,0);
 
-
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
         long diff = timeCalculator.getNumberOfWorkingMinutes();
 
@@ -156,7 +152,6 @@ class TimeCalculatorTest {
         to.set(Calendar.MINUTE,1);
         to.set(Calendar.SECOND,0);
         to.set(Calendar.MILLISECOND,0);
-
 
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
         long diff = timeCalculator.getNumberOfWorkingMinutes();
@@ -212,7 +207,6 @@ class TimeCalculatorTest {
 
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
 
-
         assertEquals(60, timeCalculator.getNumberOfWorkingMinutes());
     }
 
@@ -233,9 +227,7 @@ class TimeCalculatorTest {
         to.set(Calendar.SECOND,0);
         to.set(Calendar.MILLISECOND,0);
 
-
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
-
 
         assertEquals(1, timeCalculator.getNumberOfWorkingMinutes());
     }
@@ -256,9 +248,7 @@ class TimeCalculatorTest {
         to.set(Calendar.SECOND,0);
         to.set(Calendar.MILLISECOND,0);
 
-
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
-
 
         assertEquals(60, timeCalculator.getNumberOfWorkingMinutes());
     }
@@ -280,10 +270,6 @@ class TimeCalculatorTest {
         to.set(Calendar.SECOND,0);
         to.set(Calendar.MILLISECOND,0);
 
-
-        System.out.println(from.getTime());
-        System.out.println(to.getTime());
-        System.out.println("---------");
         TimeCalculator timeCalculator = new TimeCalculator(from.getTimeInMillis(), to.getTimeInMillis());
 
         long diff = timeCalculator.getNumberOfWorkingMinutes();

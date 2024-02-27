@@ -43,7 +43,6 @@ public class TimeCalculator {
         while (from.compareTo(to) < 0) {
 
             while (holidays.contains(from.get(Calendar.DAY_OF_YEAR))) {
-
                 from.add(Calendar.DAY_OF_MONTH, 1);
             }
 
