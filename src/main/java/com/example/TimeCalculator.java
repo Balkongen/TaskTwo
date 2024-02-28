@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.Calendar;
 import java.util.Set;
+import java.util.TimeZone;
 
 public class TimeCalculator {
 
@@ -18,10 +19,10 @@ public class TimeCalculator {
     }
 
     private void convertTimeFormat(long from, long to) {
-        this.from = Calendar.getInstance();
+        this.from = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         this.from.setTimeInMillis(from);
 
-        this.to = Calendar.getInstance();
+        this.to = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         this.to.setTimeInMillis(to);
     }
 
